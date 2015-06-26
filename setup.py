@@ -16,9 +16,13 @@ setup(name='pipupdate',
       download_url='https://github.com/saromanov/pipupdate/',
       description='Time tests for code',
       #long_description=timetest.__doc__,
-      package_dir={'': 'pipupdate'},
+      package_dir={'': '.'},
       py_modules=['pipupdate'],
       provides=['pipupdate'],
+      entry_points = {
+        'console_scripts': [
+            'pipupdate = pipupdate']
+     },
       keywords='',
       license='MIT',
       classifiers=['Development Status :: 1 - Planning',

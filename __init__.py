@@ -1,1 +1,1 @@
-from pipupdate import pipupdate
+from . import pipupdate
