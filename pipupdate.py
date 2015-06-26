@@ -13,7 +13,7 @@ def pipupdate(ver, path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--path', nargs='?', help='Path to pip', default='/usr/local/bin/')
+    parser.add_argument('--path', nargs='?', help='Path to pip', default='/usr/bin/')
     parser.add_argument('--ver', nargs='?', help='Version of pip (2,3,3.3...)', default='3.5')
     args = parser.parse_args()
     pipupdate(args.ver, args.path)
