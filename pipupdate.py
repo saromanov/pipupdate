@@ -2,9 +2,8 @@ import sh
 from termcolor import colored
 import argparse
 
-def pipupdate(ver, path, show_info, exceptv):
+def pipupdate(ver, path, show_info=False, exceptv=[]):
     command = sh.Command("{0}pip{1}".format(path, ver))
-    print(exceptv)
     i = 0
     for package in command("list", "-o",_iter=True):
         pack = package.split('(')[0]
@@ -23,4 +22,4 @@ if __name__ == '__main__':
     parser.add_argument('--show-info', help='Show installation information', action='store_true')
     parser.add_argument('--without', nargs='+', help='update except this packages', default=[])
     args = parser.parse_args()
-    pipupdate(args.ver, args.path, args.show_info, args.without)
+    pipupdate(args.ver, args.path, show_info=args.show_info, execptv=args.without)
