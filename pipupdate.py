@@ -3,6 +3,16 @@ from termcolor import colored
 import argparse
 
 def pipupdate(ver, path, show_info=False, exceptv=[]):
+    '''
+    Args:
+      ver - version of python
+      path - path to pip
+      show_info - Show update information during work
+      execeptv - update all packages except from this list
+
+    Example:
+      pipupdate('3.4', '/usr/local/bin/pip3.4)
+    '''
     command = sh.Command("{0}pip{1}".format(path, ver))
     i = 0
     for package in command("list", "-o",_iter=True):
